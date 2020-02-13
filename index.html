@@ -16,7 +16,56 @@
 			Injection
 		</h2>
 		<p>
-			
+			Injection er når en "attacker" formår at få sendt data som er bliver udført som kommandoer. Hvor hvis kommandoen bliver udført og de har succes, kan de have mulighed for afsløre data som elelrs skulle være sikret, altså de får uatoriseret adgang. 
+		</p>
+		<img src="1.png">
+		<p>
+			Injection bygger f.eks. på at man i en formular indsætter nogle scripts som kan udføre farlige kommandoer på din server, og videresende fortrolig data. Man kan ikke altid vide sig sikker på at man undgår det, men man kan gøre mange ting for at forebygge det. eksempelvis følge disse trin:
+		</p>
+		<ul>
+			<li>
+				<p>
+					Filtering
+				</p>
+			</li>
+			<li>
+				<p>
+					Validating
+				</p>
+			</li>
+			<li>
+				<p>
+					Encoding
+				</p>
+			</li>
+			<li>
+				<p>
+					Escaping
+				</p>
+			</li>
+		</ul>
+		<h3>
+			Filtering & validating 
+		</h3>
+		<p>
+			Kodeordet her er blacklisting. Det er vigtigt at man blacklister forskllige tegn eller kombinationer, som man ved kan føre til noget farligt. F.eks. hvis man snakker javascript, så vlle man blackliste følgende: "< > / $ % " '" &; " Da disse tegn en generelle og har et stort brug, og man ikke kan åbne eller køre et script uden. Man kan også vælge at vende den process om, så brugeren kun får mulighed for at indskrive de tegn som de skal bruge. Som f.eks. i en email "xxx@xxx.xx" der vil dog altid være komplikationer. Da man i web apps ikke vil begrænse brugeren hvis de har en email med ". -" inden det første @ tegn. 	
+		</p>
+		<h3>
+			Encoding & escpaing
+		</h3>
+		<p>
+			HTML har en indbygget encoding hvor den omskriver special tegn. (" such as ' and " would become & apos; and & quot; respectively. ");
+		</p>
+		<p>
+			Når man bruger denne metode, vil tegnene stadig blive skrevet ind i kommandoen og HTML formularen vil godkende tegnene, men de vil efter submit bliver omdannet til HTML encoding som gør at det ikke bliver kørt som funktioner. Hvor man på den måde "escaper" ham der prøver at infiltrere din formulars kode ved at gøre det invalid.  
+		</p>
+		<h2>
+			Kendte sprog og mest anvendte
+		</h2>
+		<p>
+			<h1 class="b">" <a style="font-size:12px;" href="https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection">link</a></h1>
+				Some of the more common injections are SQL, NoSQL, OS command, Object Relational Mapping (ORM), LDAP, and Expression Language (EL) or Object Graph Navigation Library (OGNL) injection. The concept is identical among all interpreters. Source code review is the best method of detecting if applications are vulnerable to injections, closely followed by thorough automated testing of all parameters, headers, URL, cookies, JSON, SOAP, and XML data inputs. Organizations can include static source (SAST) and dynamic application test (DAST) tools into the CI/CD pipeline to identify newly introduced injection flaws prior to production deployment.
+			<h1 class="b">"</h1>
 		</p>
 	</div>
 </body>
